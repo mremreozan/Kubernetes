@@ -88,7 +88,7 @@ kubectl get svc
 minikube service --url my-nginx-service
 ```
 ### If you type this ip on your browser, you see the application
-![alt text](/assets/browser.png)
+![alt text](assets/browser.png)
 # 6. Deployments (nginx_deployment.yml)
 Deployments help us to perform rolling updates and rollbacks. We can think that it log every steps.
 ```bash
@@ -171,7 +171,7 @@ spec:
 kubectl apply -f nginx_deployment.yml
 ```
 ### If you type same ip on your browser, you see the updated application (http://192.168.49.2:31982/)
-![alt text](/assets/browser2.png)
+![alt text](assets/browser2.png)
 # 8. Turn into previous version (ROLLBACK)
 ### To see history of the deployment
 ```
@@ -182,7 +182,7 @@ kubectl rollout history deploy nginx-deployment
 kubectl rollout undo deploy nginx-deployment --to-revision=1
 ```
 ### ### If you type same ip on your browser, you see the previous application page. Because we turn inti previous version. (http://192.168.49.2:31982/)
-![alt text](/assets/browser.png)
+![alt text](assets/browser.png)
 # 9. Delete all pods and services in the namespace (my namespace name is default)
 ```
 kubectl -n default delete pod,svc --all
@@ -198,4 +198,5 @@ minikube ip
 kubectl describe service <service-name>
 kubectl describe nodes <nod-name>
 kubectl describe pods <pod-name>
+kubectl get all -A
 ```
